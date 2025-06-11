@@ -1,0 +1,50 @@
+name: semantic release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Reset branch
+        run: |
+          git reset --hard ${{ github.sha }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8.18'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install setuptools wheel python-semantic-release build
+          
+      - name: Release
+        run: |
+          # symbolic link to fix an error when running a build_command
+          sudo ln -s /home/runner/_work/_tool/Python/3.8.18/x64/lib/libpython3.8.so.1.0 /usr/lib/libpython3.8.so.1.0
+          semantic-release version
+          semantic-release publish
