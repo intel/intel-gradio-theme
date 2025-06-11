@@ -1,0 +1,65 @@
+name: Bandit
+
+on:
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
+
+jobs:
+  analyze:
+    runs-on: 'ubuntu-latest'
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    steps:
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.9
+
+    - name: Install Bandit
+      shell: bash
+      run: pip install bandit[sarif]
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.RELEASE_TOKEN }}
+
+    - name: Run Bandit - Generate SARIF report and check for HIGH severity issues
+      id: high_severity_check
+      shell: bash
+      run: |
+        # Run Bandit to generate SARIF report
+        bandit . -r -c ipas_default.config -f sarif -o results.sarif || true
+        
+        # Check the SARIF report for high severity issues
+        if grep -q '"SEVERITY.HIGH": [1-9]' results.sarif; then
+          echo "HIGH severity issues found! Workflow will fail after reporting."
+          echo "high_severity_issues=true" >> $GITHUB_OUTPUT
+        else
+          echo "No HIGH severity issues found!"
+        fi
+
+    - name: Upload SARIF results
+      uses: actions/upload-artifact@v4
+      with:
+        name: bandit-results
+        path: results.sarif
+
+    - name: Upload SARIF to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results.sarif
+        category: bandit
+
+    - name: Fail workflow if HIGH severity issues were found
+      if: steps.high_severity_check.outputs.high_severity_issues == 'true'
+      shell: bash
+      run: |
+        echo "ERROR: HIGH severity security issues were found by Bandit."
+        echo "Review the security report and fix all HIGH severity issues before merging."
+        exit 1

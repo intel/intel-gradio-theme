@@ -1,0 +1,30 @@
+# Include the README and license files
+include README.md
+include CHANGELOG.md
+
+# Include the setup files
+include setup.py
+include pyproject.toml
+include requirements.txt
+
+# Include all files in the package directory
+recursive-include intel_gradio_theme *.py
+recursive-include intel_gradio_theme *.css
+recursive-include intel_gradio_theme *.html
+
+# Exclude unnecessary files and directories
+global-exclude *.py[cod] __pycache__/* *.so
+exclude .gitignore
+exclude .pre-commit-config.yaml
+recursive-exclude tests *
+recursive-exclude docs *
+recursive-exclude examples *
+recursive-exclude build *
+recursive-exclude dist *
+recursive-exclude *.egg-info *
+
+# Exclude virtual environments
+recursive-exclude .venv *
+recursive-exclude venv *
+recursive-exclude .env *
+recursive-exclude env *
