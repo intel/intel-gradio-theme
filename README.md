@@ -121,6 +121,4 @@ export NO_PROXY=intel.com,localhost,127.0.0.1
 
 1. **Open an Issue**: Go to the [Issues](https://github.com/intel/intel-gradio-theme/issues) tab in the repository, click "New Issue," and describe your feedback or feature request.
 
-2. **Contact us directly**: Please ping or email [Erin Olmon <erin.olmon@intel.com>](mailto:erin.olmon@intel.com).
-
 Your feedback and feature requests are greatly appreciated and help improve the project!
