@@ -1,4 +1,4 @@
-# Spark Island Theme for Gradio
+# Intel theme for Gradio
 
 ## Table of Contents
 - [How to Use](#how-to-use)
@@ -12,8 +12,8 @@
     - [no_proxy environment variable](#no_proxy-environment-variable)
 - [How to Provide Feedback or Request New Features](#how-to-provide-feedback-or-request-new-features)
 
-## What is the Spark Island theme for Gradio
-The Spark Island Theme for Gradio uses **Gradio's native theming capabilities** to apply the Intel brand to a gradio application. It does not have any 3rd party dependencies other than gradio.
+## What is the Intel theme for Gradio
+The Intel theme for Gradio uses **Gradio's native theming capabilities** to apply the Intel brand to a gradio application. It does not have any 3rd party dependencies other than gradio.
 
 ## How to Use
 1. If using a virtual environment (strongly recommended), activate the virtual environment:
@@ -63,7 +63,7 @@ The Spark Classic Blue theme uses the Intel Corporate Brand colors (Blue), while
 ### Header & Footer Components
 
 #### Header
-To add a header to your Gradio app using the Spark Island Theme, you can use the `header` method provided in the `SparkTheme` class. Here is an example:
+To add a header to your Gradio app using the Intel theme, you can use the `header` method provided in the `SparkTheme` class. Here is an example:
 
 ```python
 from intel_gradio_theme import SparkTheme
@@ -76,7 +76,7 @@ demo.launch(theme=theme, components=[theme.header("Welcome to My Gradio App")])
 This will add a header with the specified text to your Gradio app.
 
 #### Footer
-To add a footer to your Gradio app using the Spark Island Theme, you can use the `footer` method provided in the `SparkTheme` class. Here is an example:
+To add a footer to your Gradio app using the Intel theme, you can use the `footer` method provided in the `SparkTheme` class. Here is an example:
 
 ```python
 from intel_gradio_theme import SparkTheme

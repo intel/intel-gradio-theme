@@ -50,7 +50,7 @@ with gr.Blocks(theme=theme, css=themecss) as demo:
                 ### Additional Components
 
                 #### Header
-                To add a header to your Gradio app using the Spark Island Theme, you can use the `add_header` function provided in the `spark_theme` module. Here is an example:
+                To add a header to your Gradio app using the Intel theme, you can use the `add_header` function provided in the `spark_theme` module. Here is an example:
 
                 ```python
                 from spark_theme import add_header
@@ -63,7 +63,7 @@ with gr.Blocks(theme=theme, css=themecss) as demo:
                 This will add a header with the specified text, color, and font size to your Gradio app.
 
                 #### Footer
-                To add a footer to your Gradio app using the Spark Island Theme, you can use the `add_footer` function provided in the `spark_theme` module. Here is an example:
+                To add a footer to your Gradio app using the Intel theme, you can use the `add_footer` function provided in the `spark_theme` module. Here is an example:
 
                 ```python
                 from spark_theme import add_footer
