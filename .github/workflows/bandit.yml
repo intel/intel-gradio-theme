@@ -10,10 +10,12 @@ on:
 jobs:
   analyze:
     runs-on: 'ubuntu-latest'
+
     permissions:
       security-events: write
       actions: read
       contents: read
+      
     steps:
     - name: Set up Python 3.9
       uses: actions/setup-python@v5
