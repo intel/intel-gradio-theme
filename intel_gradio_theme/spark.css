@@ -1,0 +1,53 @@
+main {
+    padding: 0px !important;
+}
+.spark-header {
+    margin: 0px;
+    padding: 0px;
+    background: [primary-500];
+    height: 60px;
+}
+.spark-logo {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+.spark-title {
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    color: white;
+    font-weight: var(--prose-header-text-weight);
+    font-size: 24px;   
+}
+.html-container {
+    padding: 0;
+}
+.header {
+    margin: 0px;
+    padding: 10px;
+    background: [primary-500];
+    color: white;
+    font-size: 24px;
+}
+.spark-footer {
+    background: [primary-500];
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.spark-footer-info {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+footer:not(.spark-footer) {
+    visibility: hidden !important;
+    margin-top: 0 !important;
+}

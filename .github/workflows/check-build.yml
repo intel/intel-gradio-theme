@@ -1,0 +1,43 @@
+name: Check build
+
+on:
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
+
+jobs:
+  build-test:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+          python-version: '3.8.18'
+
+      - name: Install Dependencies
+        shell: bash
+        run: |
+          pip install -r requirements.txt
+          pip install --upgrade build
+       
+      - name: Build
+        shell: python
+        run: |
+          import os
+          import subprocess
+
+          def build_wheel():
+              if not os.path.exists('dist'):
+                  os.makedirs('dist')
+              subprocess.check_call([ 'python', '-m', 'build', '--wheel' ])
+
+          build_wheel()
+
