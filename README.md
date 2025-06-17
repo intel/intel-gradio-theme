@@ -1,4 +1,8 @@
-# Intel theme for Gradio
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/intel/intel-gradio-theme/badge)](https://scorecard.dev/viewer/?uri=github.com/intel/intel-gradio-theme)
+[![CodeQL](https://github.com/intel/intel-gradio-theme/workflows/CodeQL/badge.svg)](https://github.com/intel/intel-gradio-theme/security/code-scanning)
+
+
+# Intel® theme for Gradio
 
 ## Table of Contents
 - [How to Use](#how-to-use)
