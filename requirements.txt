@@ -1,7 +1,7 @@
 gradio>=4.0.0
 
 setuptools==78.1.1
-bandit[sarif]==1.7.8
+bandit[sarif]==1.8.5
 build==1.2.2.post1
 wheel==0.45.1
 python-semantic-release==9.21.1
