@@ -1,6 +1,6 @@
 gradio>=4.0.0
 
-setuptools==78.1.1
+setuptools==80.9.0
 bandit[sarif]==1.8.5
 build==1.2.2.post1
 wheel==0.45.1
