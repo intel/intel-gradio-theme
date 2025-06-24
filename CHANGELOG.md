@@ -43,6 +43,9 @@
 - Fix bandit scan
   ([`6a87913`](https://github.com/intel/intel-gradio-theme/commit/6a8791351dc94a185679ed832eccd374811c4d76))
 
+- Fix publishing package to pypi
+  ([`768449b`](https://github.com/intel/intel-gradio-theme/commit/768449b97a6e523defd3238cf365d50cafe4252e))
+
 - Fixing bandit scan error
   ([`db484a1`](https://github.com/intel/intel-gradio-theme/commit/db484a1477a7136217a3fe68f2bc7de892d37314))
 
