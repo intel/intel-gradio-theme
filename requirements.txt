@@ -4,4 +4,4 @@ setuptools==80.9.0
 bandit[sarif]==1.8.6
 build==1.2.2.post1
 wheel==0.45.1
-python-semantic-release==10.2.0
+python-semantic-release==10.3.1
